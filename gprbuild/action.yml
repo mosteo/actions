@@ -13,6 +13,5 @@ inputs:
 
 runs:
   using: 'docker'
-  image: ${{ join('docker://', inputs.docker-image) }}
-  entrypoint: gprbuild
-  args: [ '-p', '-P', '${{ inputs.project-file }}' ]
+  image: 'docker://${{ inputs.docker-image }}'
+  args: [ 'gprbuild', '-p', '-P', '${{ inputs.project-file }}' ]
