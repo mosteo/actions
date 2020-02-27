@@ -1,0 +1,12 @@
+name: 'docker run'
+description: 'run a script within a Docker image'
+author: 'Alejandro R. Mosteo'
+
+inputs: 
+  docker-image:
+    description: 'A dockerhub image'
+    default: 'ubuntu:latest'
+
+runs:
+  using: 'node12'
+  main: 'main.js'
