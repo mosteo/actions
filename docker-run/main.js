@@ -13,8 +13,9 @@ try {
    };
  
    // pull the required machine
-   const data = await dockerCommand
-     (`pull ${core.getInput('docker-image')}`, options);
+   dockerCommand (`pull ${core.getInput('docker-image')}`, options)
+     .then(data => { console.log ('Pulled OK ' + data); })
+     .catch(err => { console.log ('Pulled Err ' + err); });
 
 } catch (error) {
    core.setFailed(error.message);
