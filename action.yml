@@ -3,7 +3,7 @@ description: 'run a command/script within a Docker Hub image'
 author: 'Alejandro R. Mosteo'
 
 inputs: 
-  docker-image:
+  image:
     description: 'A dockerhub image'
     default: 'ubuntu:latest'
   command:

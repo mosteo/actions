@@ -9,4 +9,4 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: test docker-run action
-      uses: mosteo/actions/docker-run@master
+      uses: mosteo/actions@docker-run/v1
