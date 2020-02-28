@@ -20,11 +20,11 @@ try {
    // pull the required machine
    dockerCommand (`pull ${image}`, options)
      .then(() => console.log (`Pulled OK: ${image}`))
-     .catch(err => console.log (`Pulled Err: ${image} ${err}`))
+     .catch(err => core.setFailed (`Pulled Err: ${image} ${err}`))
    // run it
-     .then(() => dockerCommand (`run -w ${guestDir} -v${hostDir}:${guestDir} ${image} ${command}`))
+     .then(() => dockerCommand (`run -e PATH -w ${guestDir} -v${hostDir}:${guestDir} ${image} ${command}`))
      .then(() => console.log (`Ran OK: ${command}`))
-     .catch(err => console.log (`Run Err: ${image} ${command}: error is: ${err}`));
+     .catch(err => core.setFailed (`Run Err: ${image} ${command}: error is: ${err}`));
 
 } catch (error) {
    core.setFailed(error.message);

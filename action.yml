@@ -14,7 +14,8 @@ inputs:
     default: '${{ github.workspace }}'
   guest-dir:
     description: 'Guest dir that will overlay host-idr, and be used as working directory'
-    default: '/work'
+    default: '${{ github.workspace }}'
+    # By using the same host:guest mapping, $PATH is valid in both
 
 runs:
   using: 'node12'
