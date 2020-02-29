@@ -9,6 +9,9 @@ inputs:
   command:
     description: 'Command to run inside image'
     default: 'ls -al'
+  params:
+    description: 'Extra parameters to pass to `docker run`'
+    default: ''
   host-dir:
     description: 'Host dir to map into the container'
     default: '${{ github.workspace }}'

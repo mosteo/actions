@@ -14,6 +14,7 @@ try {
    const hostDir  = core.getInput('host-dir');
    const guestDir = core.getInput('guest-dir');
    const command  = core.getInput('command');
+   const params   = core.getInput('params');
 
    core.info(`PATH is ${process.env.PATH}`);
  
@@ -23,7 +24,7 @@ try {
      .catch(err => core.setFailed (`Pulled Err: ${image} ${err}`))
 
    // run it
-     .then(() => dockerCommand (`run -e PATH -w ${guestDir} -v${hostDir}:${guestDir} ${image} ${command}`))
+     .then(() => dockerCommand (`run ${params} -w ${guestDir} -v${hostDir}:${guestDir} ${image} ${command}`))
      .then(() => core.info (`Ran OK: ${command}`))
      .catch(err => core.setFailed (`Run Err: ${image} ${command}: error is: ${err}`));
 
