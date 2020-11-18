@@ -1,5 +1,8 @@
 # docker-run
 
+**DEPRECATION**: next versions of this and other actions in this repository will be
+published in the https://github.com/mosteo-actions organization.
+
 This action allows you to run a command of your choosing inside a docker
 container given by its tag in Docker Hub. 
 
