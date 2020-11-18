@@ -16,9 +16,9 @@ inputs:
     description: 'Host dir to map into the container'
     default: '${{ github.workspace }}'
   guest-dir:
-    description: 'Guest dir that will overlay host-idr, and be used as working directory'
+    description: 'Guest dir that will overlay host-dir, and be used as working directory'
     default: '${{ github.workspace }}'
-    # By using the same host:guest mapping, $PATH is valid in both
+    # By using the same host:guest mapping, the host $PATH is valid in both
 
 runs:
   using: 'node12'
